@@ -1,6 +1,5 @@
 //! egui-notify
 //! Simple notifications library for EGUI
-
 #![warn(missing_docs)]
 
 mod toast;

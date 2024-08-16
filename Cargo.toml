@@ -13,6 +13,7 @@ path = "src/lib.rs"
 
 [dependencies]
 egui = { version = "0.28.0", default-features = false }
+once_cell = { version = "1.19.0", optional = true }
 
 [dev-dependencies]
 eframe = { version = "0.28.0", default-features = false, features = [
@@ -20,6 +21,10 @@ eframe = { version = "0.28.0", default-features = false, features = [
     "glow",
 ] }
 egui-phosphor = { git = "https://github.com/ItsEthra/egui-phosphor", branch = "main" }
+
+
+[features]
+macros = ["dep:once_cell"]
 
 [lints.rust]
 unsafe_code = "forbid"
