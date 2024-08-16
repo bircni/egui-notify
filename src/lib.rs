@@ -2,6 +2,8 @@
 //! Simple notifications library for EGUI
 #![warn(missing_docs)]
 
+#[allow(missing_docs)]
+pub mod r#macro;
 mod toast;
 pub use toast::*;
 mod anchor;
@@ -173,7 +175,7 @@ impl Toasts {
 
 impl Toasts {
     /// Displays toast queue
-    pub fn show(&mut self, ctx: &Context) {
+    pub fn show(&mut self, ctx: &Context, opt: Option<ToastOptions>) {
         let Self {
             anchor,
             margin,
@@ -211,6 +213,9 @@ impl Toasts {
         let mut update = false;
 
         for (i, toast) in toasts.iter_mut().enumerate() {
+            if let Some(options) = &opt {
+                toast.set_options(options.clone());
+            }
             let anim_offset = toast.width * (1. - ease_in_cubic(toast.value));
             pos.x += anim_offset * anchor.anim_side();
             let rect = toast.calc_anchored_rect(pos, *anchor);

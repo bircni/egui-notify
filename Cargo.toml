@@ -32,3 +32,11 @@ unsafe_code = "forbid"
 [lints.clippy]
 all = { level = "deny", priority = 0 }
 enum_glob_use = { level = "deny", priority = 2 }
+
+[[example]]
+name = "all"
+#required-features = ["macros"]
+
+[[example]]
+name = "macros"
+required-features = ["macros"]

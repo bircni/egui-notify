@@ -51,6 +51,7 @@ impl ToastState {
 }
 
 /// Container for options for initlizing toasts
+#[derive(Clone)]
 pub struct ToastOptions {
     duration: Option<Duration>,
     level: ToastLevel,

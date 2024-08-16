@@ -124,7 +124,7 @@ impl App for ExampleApp {
             }
         });
 
-        self.toasts.show(ctx);
+        self.toasts.show(ctx, None);
     }
 }
 
